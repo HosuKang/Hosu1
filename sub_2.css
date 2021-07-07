@@ -1,0 +1,621 @@
+@charset "utf-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    background-color: white;
+    /* border: 1px solid red; */
+    width: 360px;
+    margin: auto;
+}
+
+:root {
+    color: #333;
+    font-family: 'NanumSquareRound', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+@media (max-width:400px) {
+    body {
+        width: 100%
+    }
+}
+
+/* 공지사항 상단영역 */
+.no_click {
+    pointer-events: none;
+}
+
+.big {
+    font-size: 18px;
+}
+
+.bold {
+    font-weight: 400;
+}
+
+
+.yellow_box {
+    background-color: rgb(255, 248, 236);
+}
+
+.center {
+    text-align: center;
+}
+
+.red {
+    color: rgb(235, 36, 36);
+}
+
+.padding {
+    padding-left: 50px;
+}
+
+.sub_top {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin-bottom: 36px;
+
+}
+
+.top_index {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 1.2rem;
+
+}
+
+.top_index>* {
+    padding: 8px;
+}
+
+.top_title {
+    font-size: 2.8rem;
+    position: absolute;
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    background-color: #ffe8e8;
+    border-radius: 7px;
+    top: 48px;
+    left: 16px;
+    /* left: 50%;
+    transform: translateX(-50%); */
+}
+
+h1 {
+    /* background-color: #f9f9f9; */
+    border-bottom: 1px solid #bbb;
+    /* border-top: 1px solid #bbb; */
+    font-size: 1.6rem;
+    padding: 16px 24px;
+    text-align: center;
+    position: relative;
+    line-height: 1.6em;
+}
+
+h1 span {
+    font-weight: 400;
+}
+
+.no_prev.top,
+.no_next.top {
+    position: absolute;
+    bottom: 16px;
+    font-size: 1.2rem;
+    width: 42px;
+    height: 22px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
+.no_prev.top {
+    left: 16px;
+    text-align: right;
+    padding-right: 4px;
+    background-image: url(../image/화살표5-3.png);
+
+}
+
+.no_next.top {
+    right: 16px;
+    background-image: url(../image/화살표4-3.png);
+    text-align: left;
+    padding-left: 4px;
+}
+
+.no_prev.top:hover,
+.no_next.top:hover {
+    height: 24px;
+    font-weight: 400;
+}
+
+.no_date {
+    font-size: 1rem;
+    padding-top: 12px;
+}
+
+/* 리스트영역 */
+.no_search {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-top: 2px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.no_search input {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    outline: none;
+    border: none;
+    font-family: 'NanumSquareRound', sans-serif;
+    background-color: #f8f8f8;
+    width: 85%;
+    height: 30px;
+
+}
+
+.no_search input:hover {
+    background-color: white;
+}
+
+.no_search input::placeholder {
+    color: #999;
+    font-family: 'NanumSquareRound', sans-serif;
+    font-size: 1.6rem;
+    text-indent: 5px;
+}
+
+.no_search span {
+    display: inline-block;
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 100%;
+}
+
+.no_search i {
+    color: #999;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.no_search i:hover {
+    color: #DE3939;
+}
+
+.notice {
+    font-size: 1.4rem;
+}
+
+.notice>ul>li:nth-of-type(1),
+.notice>ul>li:nth-of-type(2),
+.notice>ul>li:nth-of-type(3),
+.notice>ul>li:nth-of-type(4) {
+    background-color: #f8f8f8;
+}
+
+.notice>ul>li a {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.notice>ul>li:last-of-type a {
+    border-bottom: 2px solid #dfdfdf;
+}
+
+.notice>ul>li:hover a {
+    font-weight: 400;
+}
+
+
+
+.no_title {
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.no_date {
+    font-size: 1.2rem;
+    padding: 1px;
+}
+
+.i_no,
+.i_end,
+.i_de {
+    font-size: 1rem;
+    display: inline-block;
+    width: 36px;
+    height: 15px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 17px;
+    margin-right: 3px;
+    color: white;
+}
+
+.i_no {
+    background-color: #FFC600;
+}
+
+.i_end {
+    background-color: #444;
+}
+
+.i_de {
+    background-color: #777;
+}
+
+
+.notice ul li:hover .i_no,
+.notice ul li:hover .i_end,
+.notice ul li:hover .i_de {
+    background-color: #DE3939;
+}
+
+/* 컨텐츠영역 */
+
+.no_content {
+    /* border: 1px solid red; */
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    line-height: 1.8em;
+
+    border-bottom: 1px solid #bbb;
+}
+
+.no_content img {
+    width: 100%;
+}
+
+.no_content figure {
+    position: relative;
+}
+
+.no_content figcaption {
+    font-size: 1rem;
+    color: white;
+    position: absolute;
+    left: 5px;
+    bottom: 10px;
+    padding: 0 6px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.no_content p {
+    padding: 8px;
+}
+
+.content2 img {
+    border-radius: 10px;
+}
+
+.content2 p {
+    padding: 4px;
+}
+
+.content2 p:nth-of-type(1) {
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding-top: 18px;
+}
+
+.content2 span {
+    color: rgb(23, 106, 201);
+    font-weight: 400;
+}
+
+.content2>div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px 0;
+}
+
+.content2 div>div:nth-of-type(1) {
+    border-radius: 10px 0 0 0;
+}
+
+.content2 div>div:nth-of-type(15) {
+    border-radius: 0 0 0 10px;
+    border: none;
+}
+
+.content2 div>div:nth-of-type(2) {
+    border-radius: 0 10px 0 0;
+}
+
+.content2 div>div:nth-of-type(16) {
+    border-radius: 0 0 10px 0;
+    border-bottom: 1px solid #FFC600;
+}
+
+.content2 .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 60px;
+    padding: 12px 6px;
+    background-color: #FFC600;
+    border-bottom: 1px solid rgb(255, 219, 121);
+    font-weight: 400;
+}
+
+.content2 .contents {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #FFC600;
+    border-right: 1px solid #FFC600;
+    width: calc(100% - 70px);
+    height: 60px;
+    padding: 8px;
+}
+
+.content2>a {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 12px;
+    position: relative;
+    left: 65px;
+}
+
+.content2 a:hover {
+    color: tomato;
+}
+
+.content3 .img_back {
+    position: relative;
+    height: 120px;
+    background-image: url(../image/main-4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.content3 img {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}
+
+
+.content3 {
+    padding: 18px 0;
+    color: #333;
+    border-bottom: 1px dotted #999;
+    text-align: center;
+}
+
+.content3 a {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    background-color: gold;
+    border: 2px dashed rgb(255, 183, 0);
+    border-radius: 20px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    margin: 8px 0;
+    animation: btn 1s infinite linear;
+}
+
+.content3 a:hover {
+    animation-play-state: paused;
+}
+
+.content4 {
+    color: #999;
+}
+
+@keyframes btn {
+    0% {
+        background-color: gold
+    }
+
+    50% {
+        background-color: rgb(255, 235, 124)
+    }
+
+    100% {
+        background-color: gold
+    }
+}
+
+.star_info {
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 12px;
+}
+
+.star_info>span {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.link {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 16px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(172, 201, 255);
+    border-radius: 10px;
+
+
+    z-index: -1;
+}
+
+.link:nth-of-type(2)::after {
+    left: 6px;
+    background-color: rgb(255, 157, 138);
+}
+
+.link:hover::after {
+    top: 3px;
+    left: 3px;
+}
+
+.link:nth-of-type(2):hover::after {
+    left: 9px;
+}
+
+
+.sing>p:nth-of-type(1) {
+    font-size: 1.4rem;
+    margin: 24px 0 36px 0;
+}
+
+
+.sing2>p:nth-of-type(1) {
+    font-weight: 400;
+}
+
+/* 공지사항 하단영역 */
+
+.notice_bottom {
+    font-size: 1.6rem;
+    padding: 8px 6px 32px;
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+}
+
+.notice_bottom img {
+    width: 30px;
+}
+
+.notice_bottom span {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.notice_bottom span.on,
+.notice_bottom span:hover {
+    font-weight: 700;
+}
+
+.no_bottom>a {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.no_prev.bottom {
+    border-bottom: 1px dotted #999;
+}
+
+.no_next.bottom {
+    border-bottom: 1px solid #bbb;
+}
+
+.no_prev.bottom,
+.no_next.bottom {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+
+
+}
+
+.no_prev.bottom span,
+.no_next.bottom span {
+    display: inline-block;
+    font-size: 1rem;
+    width: 34px;
+    height: 20px;
+    background-color: #aaa;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+    margin: 0 6px 0 0;
+}
+
+.no_prev.bottom:hover span,
+.no_next.bottom:hover span {
+    background-color: #777;
+}
+
+.no_list {
+    text-align: center;
+    margin: 12px 0;
+}
+
+.no_list span {
+    display: inline-block;
+    /* border: 1px solid red; */
+    margin: 12px;
+    font-size: 1.6rem;
+    height: 8px;
+    line-height: 8px;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.no_list:hover span {
+    background-color: #ddd;
+}

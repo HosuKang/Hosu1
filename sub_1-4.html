@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대전시민천문대_모바일</title>
+    <link rel="stylesheet" href="./common/sub_1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer">
+    </script>
+    <script src="./common/sub_1.js"></script>
+    <script>
+        $(() => {
+            $('#headers').load('header.html');
+            $('#footers').load('footer.html');
+        });
+    </script>
+
+</head>
+
+<body>
+    <header id="headers"></header>
+    <section class="sec-1">
+        <h1>관측프로그램예약</h1>
+        <p class="process"><span>4</span> 예약정보 확인</p>
+   
+        <div class="confirm">
+            <p><span>예 약 일|</span>2021-06-24</p>
+            <p><span>관람정보|</span>주관측실 1회차 14:10-14:30</p>
+            <p><span>예 약 자|</span>홍길동</p>
+            <p><span>연 락 처|</span>010-2345-6789</p>
+            <p><span>비밀번호|</span>****</p>
+            <p><span>예약분류|</span>개인예약</p>
+            <p><span>관람인원수 |</span>2명</p>
+        </div>
+        <p class="con_p">확인 후 '다음'버튼을 눌러주세요.</p>
+        <div class="btn">
+            <a class="prev" href="./sub_1-3.html">이전</a>
+            <a class="next" href="./sub_1-5.html">다음</a>
+        </div>
+        <div class="dot">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="big"></span>
+            <span></span>
+        </div>
+        <div class="pop">
+            <div class="pop_box">
+                <p class="pop_text">관람시간을 선택해주세요.</p>
+                <p class="pop_ok">확인</p>
+            </div>
+        </div>
+    </section>
+    <footer id="footers"></footer>
+</body>
+
+</html>

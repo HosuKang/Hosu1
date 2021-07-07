@@ -1,0 +1,289 @@
+<style>
+    /* header */
+
+
+    header {
+        width: 360px;
+        height: 80px;
+        border-bottom: 1px solid #999;
+        position: relative;
+        margin: auto;
+        z-index: 10000;
+    }
+
+    @media(max-width:400px) {
+        header {
+            width: 100%;
+        }
+    }
+
+    header.fixed {
+        position: fixed;
+    }
+
+    header>div {
+        background: linear-gradient(#eaeaea, white, white);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        z-index: 100;
+    }
+
+    header>div>*,
+    header>* {
+        position: absolute;
+    }
+
+    .logo {
+        width: 140px;
+        bottom: 0;
+        padding-left: 16px;
+    }
+
+    .ham {
+        right: 16px;
+        bottom: 10px;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+    }
+
+    .ham span {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background-color: #121946;
+        border-radius: 2.5px;
+    }
+
+    .ham span:nth-child(1) {
+        top: 10%;
+        transform: translateY(-50%);
+        transition: .5s;
+    }
+
+    .ham span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+        transition: .5s;
+    }
+
+    .ham span:nth-child(3) {
+        top: 90%;
+        transform: translateY(-50%);
+        transition: .5s;
+    }
+
+    .ham.on span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        transition: .5s;
+    }
+
+    .ham.on span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .ham.on span:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        transition: .5s;
+    }
+
+    /* 메뉴영역 */
+
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        top: -100%;
+        display: flex;
+        justify-content: center;
+        transition: .5s;
+        opacity: 0;
+        background-color: white;
+        z-index: 100;
+
+    }
+
+    .gnb {
+        position: relative;
+        width: 100%;
+    }
+
+    nav .gnb>li {
+        position: relative;
+        width: 100%;
+        height: 70px;
+        border-bottom: 1px solid #999;
+        transition: .5s;
+        overflow: hidden;
+        z-index: 1000;
+
+    }
+
+    nav .gnb>li>a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        text-align: center;
+        line-height: 70px;
+        font-size: 2.4rem;
+        font-weight: 400;
+        overflow: hidden;
+        transition: .5s;
+    }
+
+    nav.on {
+        top: 80px;
+        opacity: 1;
+
+    }
+
+    nav .gnb>li:hover {
+        background-color: #f5f5f5;
+    }
+
+    nav .gnb>li.on {
+        margin-bottom: 245px;
+        background-color: #f5f5f5;
+        overflow: visible;
+    }
+
+    nav .gnb>li:nth-of-type(2).on {
+        margin-bottom: 199px;
+
+
+    }
+
+
+    nav .gnb>li.on .sub li:last-of-type {
+        padding-bottom: 14px;
+        border-bottom: 1px solid #999;
+
+    }
+
+    .sub {
+        position: absolute;
+        width: 100%;
+        top: -10%;
+        background-color: #f5f5f5;
+        opacity: 0;
+        transition: .5s;
+        z-index: -1;
+        border-top: 1px solid #ddd;
+    }
+
+    nav .sub>li {
+        display: block;
+
+    }
+
+
+    nav .sub>li a {
+        display: block;
+        background-color: #f5f5f5;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 1.8rem;
+        padding: 14px;
+
+    }
+
+    nav .gnb>li.on .sub {
+        opacity: 1;
+        top: 69px;
+        z-index: 500;
+    }
+
+    nav .sub>li:hover a {
+        font-weight: 400;
+        text-decoration: underline;
+
+    }
+</style>
+
+<script>
+    $(() => {
+
+        $(".ham").click(function () {
+            $(this).toggleClass("on");
+            $("nav").toggleClass("on");
+            $('header').toggleClass('fixed');
+            $('nav .gnb>li').removeClass('on');
+
+        });
+
+        $("nav .gnb>li").click(function () {
+            // $(this).addClass("on");
+            $(this).toggleClass("on");
+            $("nav .gnb>li").not(this).removeClass("on");
+        });
+    });
+</script>
+
+
+<header id="headers">
+    <div>
+        <div class="logo">
+            <a href="./index.html"><img src="./image/logo.svg" alt="대전시민천문대"></a>
+        </div>
+        <a href="#" class="ham">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+    <nav>
+        <ul class="gnb">
+            <li>
+                <a href="#">천문대소개</a>
+                <ul class="sub">
+                    <li><a href="#">인사말</a></li>
+                    <li><a href="#">조직도</a></li>
+                    <li><a href="#">시설안내</a></li>
+                    <li><a href="#">홍보자료</a></li>
+                    <li><a href="#">찾아오시는길</a></li>
+                </ul>
+            </li>
+            <li><a href="#">이용안내</a>
+                <ul class="sub">
+                    <li><a href="#">관람시간안내</a></li>
+                    <li><a href="#">관측프로그램</a></li>
+                    <li><a href="#">특별프로그램</a></li>
+                    <li><a href="#">별음악회/시낭송회</a></li>
+                </ul>
+            </li>
+            <li><a href="#">참여마당</a>
+                <ul class="sub">
+                    <li><a href="./sub_2-0.html">공지사항</a></li>
+                    <li><a href="#">질문과답변</a></li>
+                    <li><a href="#">갤러리</a></li>
+                    <li><a href="#">방문후기</a></li>
+                    <li><a href="#">천문정보</a></li>
+                </ul>
+            </li>
+            <li><a href="#">예약마당</a>
+                <ul class="sub">
+                    <li><a href="./sub_1-1.html">관측프로그램예약</a></li>
+                    <li><a href="#">특별프로그램예약</a></li>
+                    <li><a href="#">별음악회/시낭송회예약</a></li>
+                    <li><a href="#">봉샤활동예약</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+</head>
+
+<body>
+
+</body>
+
+</html>

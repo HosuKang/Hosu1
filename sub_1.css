@@ -1,0 +1,853 @@
+@charset "utf-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    background-color: white;
+    width: 360px;
+    margin: auto;
+
+}
+
+@media (max-width:400px) {
+    body {
+        width: 100%;
+
+    }
+}
+
+
+:root {
+    color: #333;
+    font-family: 'NanumSquareRound', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.sec-1 {
+    width: 100%;
+    height: 550px;
+    padding: 36px 24px;
+    position: relative;
+}
+
+h1 {
+    display: inline-block;
+    height: 10px;
+    line-height: 10px;
+    font-size: 1.8rem;
+    background-color: #DDEEF9;
+    border-radius: 5px;
+}
+
+.process {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.process span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #47A0DE;
+    color: white;
+    text-align: center;
+    line-height: 16px;
+}
+
+
+p.chosen {
+    position: absolute;
+    /* border: 1px solid red; */
+    color: #0077cc;
+    text-align: right;
+    top: 40px;
+    right: 0;
+    font-size: 1.2rem;
+    padding-right: 24px;
+    line-height: 1.25em;
+}
+
+/* 1. 관람일 선택 */
+
+.month {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+}
+
+.month p:nth-of-type(1),
+.month p:nth-of-type(3) {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    cursor: pointer;
+    padding-bottom: 8px;
+}
+
+.month p:nth-of-type(2) {
+    font-size: 2.2rem;
+}
+
+.month p:nth-of-type(1) {
+    padding-right: 8px;
+    text-align: right;
+    width: 60px;
+    /* border: 1px solid red; */
+    background-image: url(../image/화살표5-2.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.month p:nth-of-type(3) {
+    padding-left: 5px;
+    width: 60px;
+    /* border: 1px solid red; */
+    background-image: url(../image/화살표4-2.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.day {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 18px;
+}
+
+.day>p:first-child,
+.day>p:last-child {
+    color: #DE3939;
+}
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    border-top: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+
+}
+
+.calendar>div {
+    border-bottom: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    width: calc(100% / 7);
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.4rem;
+
+}
+
+.calendar>div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #FFBA00;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: .3s;
+    opacity: 0;
+}
+
+.calendar>div:hover::after {
+    opacity: 1;
+}
+
+.calendar>div.on {
+    background-color: #FFBA00;
+}
+
+.nt_month {
+    background-color: #FFECBA;
+    pointer-events: none;
+}
+
+.calendar>div:nth-of-type(7n+2) {
+    background-color: #eaeaea;
+    pointer-events: none;
+}
+
+.mon {
+    top: 0;
+    left: 0;
+    font-size: 1.2rem;
+    padding-top: 10px;
+}
+
+/* 2.관람시간선택 */
+
+
+.choice {
+    display: flex;
+    border-bottom: 2px solid #999;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 24px;
+}
+
+.choice p {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.choice p:nth-of-type(1) {
+
+    width: 30px;
+}
+
+.choice p:nth-of-type(2) {
+
+    width: 65px;
+}
+
+.choice p:nth-of-type(3) {
+
+    width: 125px;
+}
+
+.choice p:nth-of-type(4) {
+    width: 70px;
+}
+
+.book_list {
+    width: 100%;
+    height: 320px;
+    overflow: auto;
+    padding: 8px 12px 8px 4px;
+
+}
+
+.book_list div {
+    font-size: 1.4rem;
+    line-height: 2.5em;
+    border-bottom: 1px dotted #999;
+    display: flex;
+    justify-content: space-between;
+}
+
+.book_list input {
+    margin-top: 10px;
+}
+
+.book_list input.close {
+    opacity: 0;
+}
+
+
+
+.open_booking,
+.close_booking {
+    font-size: 1rem;
+    color: white;
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 22px;
+    margin-top: 8px;
+}
+
+.open_booking {
+    background-color: #47A0DE;
+}
+
+.close_booking {
+    background-color: #777;
+}
+
+
+/* 3.예약정보입력 */
+.write {
+    font-size: 1.4rem;
+    border-bottom: 1px solid #999;
+    margin: 16px 0;
+    padding-bottom: 10px;
+}
+
+.write>div {
+    padding: 10px 0;
+}
+
+.write>div>span {
+    display: inline-block;
+    width: 60px;
+}
+
+.write>div:nth-of-type(2)>span,
+.write>div:nth-of-type(3)>span {
+    letter-spacing: 6px;
+}
+
+.write input {
+    width: 245px;
+    outline: none;
+    border: none;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+
+.write input::placeholder,
+.grp_write input::placeholder,
+.per_write input::placeholder {
+    color: #bbb;
+    font-family: 'NanumSquareRound', sans-serif;
+    font-size: 1.2rem;
+    text-indent: 5px;
+}
+
+.write>p {
+    font-size: 1.2rem;
+    padding: 4px 0 8px 0;
+    line-height: 1.25em;
+    color: #444;
+}
+
+.write>p:nth-of-type(1)>span {
+    padding-left: 50px;
+}
+
+.write>p:nth-of-type(2)>span {
+    padding-left: 62px;
+}
+
+.howmany {
+    font-size: 1.4rem;
+    width: 150px;
+    height: 35px;
+    margin: 36px auto;
+}
+
+.howmany p {
+    width: 100%;
+    height: 100%;
+    margin: 24px 0;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #47A0DE;
+    text-align: center;
+    line-height: 38px;
+    color: white;
+
+}
+
+.howmany p:hover {
+    background-color: #DDEEF9;
+    color: #333;
+}
+
+/* 개인예약진행 */
+
+.per_booking {
+    position: absolute;
+    width: 100%;
+    height: 215px;
+    background-color: white;
+    /* padding: 0 24px; */
+    bottom: 0;
+    left: 0;
+    font-size: 1.4rem;
+    display: none;
+}
+
+.per_booking.on {
+    display: block;
+}
+
+.per_booking>div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.per_booking>div>span {
+    margin-left: 24px;
+}
+
+.per_booking>div:first-child {
+    margin: 0 24px;
+}
+
+.per_booking>div>p:first-child {
+    background-color: #FFECBA;
+    height: 8px;
+    border-radius: 4px;
+    line-height: 8px;
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.per_write {
+    margin-right: 24px;
+}
+
+.per_write span {
+    padding-top: 2px;
+}
+
+.per_booking input {
+    outline: none;
+    border: none;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+
+.per_booking input[type="number"] {
+    width: 50px;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+
+}
+
+.per_booking input.name {
+    width: 80px;
+}
+
+.per_booking input.tel {
+    width: 120px;
+}
+
+.go_group {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #47A0DE;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.go_group:hover {
+    background-color: #DDEEF9;
+    color: #333;
+}
+
+/* 단체예약 진행 */
+.grp_booking {
+
+    position: absolute;
+    width: 100%;
+    height: 215px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    font-size: 1.4rem;
+    display: none;
+}
+
+.grp_booking.on {
+    display: block;
+}
+
+.grp_booking>div:first-child {
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 24px 5px 24px;
+}
+
+.grp_booking>div>p:first-child {
+    background-color: #FFECBA;
+    height: 8px;
+    border-radius: 4px;
+    line-height: 8px;
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.grp_write {
+    /* border: 1px solid pink; */
+    margin: 12px 24px;
+}
+
+.grp_write>div {
+    padding: 10px 0;
+}
+
+
+.grp_write>div>span {
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 59px;
+    letter-spacing: 6px;
+}
+
+.grp_write input {
+    width: 245px;
+    outline: none;
+    border: none;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+
+
+.grp_booking input {
+    outline: none;
+    border: none;
+    background-color: #eaeaea;
+    border-radius: 10px;
+}
+
+.grp_booking input[type="number"] {
+    width: 50px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+}
+
+
+.go_per {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #47A0DE;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.go_per:hover {
+    background-color: #DDEEF9;
+    color: #333;
+}
+
+/* 4.예약정보확인 */
+.confirm {
+    font-size: 1.4rem;
+    line-height: 2.5em;
+    margin-top: 36px;
+    border: 1px solid #47A0DE;
+    border-radius: 15px;
+    padding: 16px;
+}
+
+.confirm span {
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 90px;
+    font-weight: 400;
+    text-align: right;
+    padding-right: 5px;
+
+}
+
+.confirm>p:nth-of-type(1)>span,
+.confirm>p:nth-of-type(3)>span,
+.confirm>p:nth-of-type(4)>span {
+    letter-spacing: 4.3px;
+
+}
+
+.confirm>p:nth-of-type(2)>span,
+.confirm>p:nth-of-type(5)>span,
+.confirm>p:nth-of-type(6)>span {
+    letter-spacing: 4px;
+}
+
+.confirm>p:nth-of-type(7)>span {
+    padding-right: 9px;
+}
+
+.con_p {
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: 400;
+    bottom: 130px;
+    left: 48%;
+    transform: translateX(-47%);
+}
+
+/* 5. 개인정보 수집 및 동의 */
+.box {
+    margin-top: 28px;
+    padding: 4px 0;
+    font-size: 1.2rem;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    line-height: 1.6em;
+
+}
+
+.box p {
+    padding: 10px 0;
+}
+
+.box p:nth-of-type(4) {
+    font-weight: 400;
+}
+
+.box p span {
+    line-height: 1.5em;
+    font-weight: 400;
+}
+
+.box i {
+    color: #DE3939;
+    padding-right: 3px;
+}
+
+.agree {
+    line-height: 3em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.agree span {
+    width: 90%;
+    height: 100%;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+}
+
+.agree input[type=checkbox] {
+    position: relative;
+    top: 2.5px;
+}
+
+/* 6.예약완료 */
+.sec-1-2 {
+    width: 100%;
+    height: 550px;
+    padding: 36px 24px;
+    position: relative;
+}
+
+.sec-1-2 h1 {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210px;
+    font-size: 2.4rem;
+    text-align: center;
+    line-height: 2em;
+    background-color: transparent;
+
+}
+
+.sec-1-2 h1 span {
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    background-color: #DDEEF9;
+    border-radius: 5px;
+}
+
+.sec-1-2 div {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sec-1-2 div p {
+    width: 200px;
+    height: 50px;
+    margin: 40px 0;
+}
+
+
+.sec-1-2 div a {
+    display: block;
+    background-color: #47A0DE;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 52px;
+    font-size: 1.8rem;
+
+}
+
+
+.sec-1-2 div a:hover {
+    background-color: #DDEEF9;
+    color: #333;
+}
+
+/* 하단버튼 */
+
+.prev,
+.next {
+    position: absolute;
+    bottom: 24px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 41px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.prev {
+    background-image: url(../image/prev_arrow.png);
+    left: 24px;
+    padding-left: 8px;
+}
+
+.next {
+    right: 24px;
+    background-image: url(../image/next_arrow.png);
+    padding-right: 8px;
+}
+
+.prev:hover {
+    background-image: url(../image/prev_arrow_over.png);
+    color: white;
+}
+
+.next:hover {
+    background-image: url(../image/next_arrow_over.png);
+    color: white;
+}
+
+
+.dot {
+    position: absolute;
+    bottom: 42px;
+    left: 50%;
+    transform: translateX(-70px);
+}
+
+.dot>span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #C1C1C1;
+}
+
+.dot>span:nth-of-type(1) {
+    left: 30px;
+}
+
+.dot>span:nth-of-type(2) {
+    left: 48px;
+}
+
+.dot>span:nth-of-type(3) {
+    left: 66px;
+}
+
+.dot>span:nth-of-type(4) {
+    left: 84px;
+}
+
+.dot>span:nth-of-type(5) {
+    left: 102px;
+}
+
+.dot>span.big {
+    width: 10px;
+    height: 10px;
+    bottom: -8px;
+    background-color: #EBEBEB;
+    transform: translateX(-2px);
+}
+
+
+/* 팝업창 */
+
+.pop {
+    display: none;
+}
+
+.pop.on {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.pop.on .pop_box {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border: 3px solid #FFBA00;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pop.on .pop_text {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.pop.on .pop_ok {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    width: 40px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #FFBA00;
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+}

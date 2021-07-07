@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대전시민천문대_모바일</title>
+    <link rel="stylesheet" href="./common/sub_1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer">
+    </script>
+    <script src="./common/sub_1.js"></script>
+    <script>
+        $(() => {
+            $('#headers').load('header.html');
+            $('#footers').load('footer.html');
+        });
+    </script>
+
+</head>
+
+<body>
+    <header id="headers"></header>
+    <section class="sec-1">
+        <h1>관측프로그램예약</h1>
+        <p class="process"><span>3</span> 예약정보 입력</p>
+        <p class="chosen">관람일: 2021-06-24<br>
+        주관측실 1회차 14:10-14:30
+        </p>
+        <article class="write">
+            <div><span>예약자명</span><input type="text" placeholder="이름을 입력해주세요." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='이름을 입력해주세요.'"></div>
+            <div><span>연락처</span><input type="text" placeholder="전화번호를 입력해주세요." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='전화번호를 입력해주세요.'"></div>
+            <div><span>이메일</span><input type="text" placeholder="이메일을 입력해주세요." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='이메일을 입력해주세요.'"></div>
+            <div><span>비밀번호</span><input type="text" placeholder="******" onfocus="this.placeholder=''"
+                    onblur="this.placeholder='******'"></div>
+            <p>※이메일: 예약내역이 발송됩니다.<br>
+                <span>실제로 사용하는 이메일 주소를 입력해주세요.</span></p>
+            <p>※예약확인: 입력하신 이메일 주소와 비밀번호를 이용하여 확인<br>
+                <span>가능합니다. 본인만 아는 정보를 입력해주세요. </span></p>
+        </article>
+        <div class="howmany">
+            <p>개인예약 (30명 이하)</p>
+            <p>단체예약 (30명 이상)</p>
+        </div>
+        <article class="per_booking">
+            <div>
+                <p>개인예약 진행</p>
+                <p>관람인원수<input type="number" min="1" max="29"></p>
+            </div>
+            <div class="per_write">
+                <span>이름</span><input class="name" type="text" placeholder="이름을 입력해주세요." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='이름을 입력해주세요.'">
+                <span>연락처</span><input class="tel" type="text" placeholder="전화번호를 입력해주세요." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='전화번호를 입력해주세요.'">
+            </div>
+            <div class="per_write">
+                <span>이름</span><input class="name" type="text" placeholder="이름을 입력해주세요." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='이름을 입력해주세요.'">
+                <span>연락처</span><input class="tel" type="text" placeholder="전화번호를 입력해주세요." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='전화번호를 입력해주세요.'">
+            </div>
+            <p class="go_group">단체예약으로 변경하기</p>
+        </article>
+
+        <article class="grp_booking">
+            <div>
+                <p>단체예약 진행</p>
+                <p>관람인원수<input type="number" min="30"></p>
+            </div>
+            <div class="grp_write">
+                <div>
+                    <span>단체명</span> <input class="name" type="text" placeholder="단체명을 입력해주세요." onfocus="this.placeholder=''"
+                        onblur="this.placeholder='단체명을 입력해주세요.'">
+                </div>
+                <div>
+                    <span>인솔자</span> <input class="tel" type="text" placeholder="이름을 입력해주세요." onfocus="this.placeholder=''"
+                        onblur="this.placeholder='이름을 입력해주세요.'">
+                </div>
+            <p class="go_per">개인예약으로 변경하기</p>
+        </article>
+
+        <div class="btn">
+            <a class="prev" href="./sub_1-2.html">이전</a>
+            <a class="next next3" href="./sub_1-4.html">다음</a>
+        </div>
+        <div class="dot">
+            <span></span>
+            <span></span>
+            <span class="big"></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="pop">
+            <div class="pop_box">
+                <p class="pop_text">관람시간을 선택해주세요.</p>
+                <p class="pop_ok">확인</p>
+            </div>
+        </div>
+    </section>
+    <footer id="footers"></footer>
+</body>
+
+</html>

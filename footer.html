@@ -1,0 +1,80 @@
+<style>
+    /* 하단영역 */
+    footer {
+        background-image: url(./image/bg.jpg);
+        background-size: cover;
+        width: 360px;
+        height: 200px;
+        margin: auto;
+        position: relative;
+    }
+
+
+    @media(max-width:400px)
+    {
+        footer{
+            width: 100%;
+        }
+    }
+    footer h1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        background: linear-gradient(rgba(34, 26, 95, 0.4), rgba(10, 8, 29, 0.7));
+    }
+
+    footer p {
+        position: relative;
+        color: white;
+        text-align: right;
+        padding: 32px;
+        line-height: 2em;
+        font-size: 1.2rem;
+        z-index: 100;
+    }
+
+    footer span {
+        font-size: 1rem;
+    }
+
+    .sns {
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        left: 32px;
+    }
+
+    .sns a {
+        display: block;
+        width: 100%;
+      height: 100%;
+        font-size: 24px;
+        color: #bbb;
+        text-align: center;
+    }
+
+    footer img {
+        position: absolute;
+        width: 100px;
+        right: 30px;
+        bottom: 32px;
+    }
+</style>
+
+<footer id="footers">
+    <h1>하단영역</h1>
+    <p>
+        (34128) 대전광역시 유성구 과학로 213-48 (신성동 7-13)<br>
+        TEL. 042-863-8762, 8763 | FAX. 042-863-8761<br>
+        <span>Copyright © 2017 Daejeon Observatory. All rights reserved</span>
+    </p>
+    <div class="sns">
+        <a class="facebook" href="https://www.facebook.com/daejeonobservatory" target="_blank"><i
+                class="fab fa-facebook-square"></i></a>
+        <a class="youtube" href="https://www.youtube.com/channel/UCN3W9zzLNx2Eeo04vm0628Q" target="_blank"><i
+                class="fab fa-youtube-square"></i></a>
+    </div>
+    <img src="./image/logo2.svg" alt="대전시민천문대">
+</footer>

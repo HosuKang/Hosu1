@@ -1,0 +1,581 @@
+@charset "utf-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    background-color: white;
+    /* border: 1px solid red; */
+    width: 360px;
+    margin: auto;
+}
+
+:root {
+    color: #333;
+    font-family: 'NanumSquareRound', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+@media (max-width:400px) {
+    body {
+        width: 100%
+    }
+}
+
+/* sec-1영역 */
+
+.sec-1 {
+    position: relative;
+    width: 360px;
+    height: 200px;
+    margin: auto;
+
+
+}
+
+
+.dot span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #C1C1C1;
+    bottom: 24px;
+    z-index: 100;
+}
+
+.dot span:nth-of-type(1) {
+    left: 30px;
+}
+
+.dot span:nth-of-type(2) {
+    left: 48px;
+}
+
+.dot span:nth-of-type(3) {
+    left: 66px;
+}
+
+.dot span:nth-of-type(4) {
+    left: 84px;
+}
+
+.dot span.big {
+    width: 10px;
+    height: 10px;
+    /* bottom: 22px; */
+    background-color: #EBEBEB;
+    transform: translate(-2px, 2px);
+}
+
+.slide_con {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide_con button {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: transparent;
+    z-index: 10;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.slide {
+    display: flex;
+    width: 400%;
+    height: 100%;
+}
+
+
+.slide1,
+.slide2,
+.slide3,
+.slide4 {
+    background-position: center;
+    background-size: cover;
+}
+
+.slide1 {
+    background-image: url(../image/main-1.png);
+}
+
+.slide2 {
+    background-image: url(../image/main-2.png);
+}
+
+.slide3 {
+    background-image: url(../image/main-3.png);
+}
+
+.slide4 {
+    background-image: url(../image/main-4.png);
+}
+
+.slide>li {
+    width: 25%;
+    position: relative;
+}
+
+.slide img {
+    position: absolute;
+}
+
+
+/* .slide1 영역 */
+
+.slide1>img {
+    width: 45%;
+    bottom: 0;
+    right: 10%;
+}
+
+.slide1>p {
+    font-size: 2.4rem;
+    color: white;
+    font-weight: 400;
+    line-height: 1.25em;
+    padding: 24px 0 0 24px;
+}
+
+.slide1>p span:nth-of-type(1) {
+    font-weight: 700;
+    text-decoration: 1px underline;
+}
+
+.slide1>p span:nth-of-type(2) {
+    font-size: 1.6rem;
+    color: #C4E7FF;
+}
+
+/* .slide2 영역 */
+
+.slide2>img {
+    width: 44px;
+    top: 50%;
+    left: 132px;
+    transform: translateY(-55%);
+}
+
+.slide2>p {
+    position: absolute;
+    color: white;
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+    font-weight: 400;
+    top: 50%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+}
+
+.slide2>p>span:nth-of-type(1) {
+    position: absolute;
+    color: #FCC635;
+    font-size: 1.4rem;
+    top: -14px;
+    left: -14px;
+    transform: rotate(-15deg);
+}
+
+.slide2>p>span:nth-of-type(2) {
+    font-size: 2.4rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.slide2>p:nth-of-type(2) {
+    position: absolute;
+    width: 170px;
+    font-weight: 300;
+    color: #A2A2A2;
+    font-size: 1.4rem;
+    top: 130px;
+    left: 200px;
+}
+
+.go {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 22px;
+    font-weight: 400;
+    bottom: 16px;
+    right: 16px;
+    z-index: 100;
+}
+.go:hover {
+    background-color: black;
+    color: white;
+}
+
+/* slide3 영역 */
+.slide3>img {
+    width: 95%;
+}
+
+.slide3 .go {
+    background-color: #3182A7;
+    color: white;
+}
+
+.slide3 .go:hover {
+background-color: black;
+}
+
+/* slide4 영역 */
+.slide4>img {
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* sec-2 영역 */
+.sec-2 {
+    width: 360px;
+    margin: auto;
+    padding: 16px;
+    font-size: 1.2rem;
+    line-height: 2em;
+    word-spacing: -1px;
+
+}
+
+.sec-2 p span {
+    width: 70px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: right;
+}
+
+.sec-2 p:nth-of-type(2)>span {
+    word-spacing: 1.5px;
+}
+
+/* sec-3 영역 */
+.sec-3 {
+    width: 360px;
+    height: 480px;
+    margin: auto;
+    position: relative;
+    background-image: url(../image/bg.jpg);
+    background-size: cover;
+}
+
+.sec-3>img {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.obs,
+.book,
+.sp_book {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.obs {
+
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 248px;
+    height: 46px;
+    border-radius: 24px;
+    background-image: url(../image/stars_sun.png);
+    line-height: 46px;
+}
+
+.obs_link {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 248px;
+    height: 46px;
+    border-radius: 24px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: white;
+    border-radius: 24px;
+    padding-right: 25px;
+    text-align: center;
+    line-height: 46px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid white;
+}
+
+.obs_link>img {
+    position: absolute;
+    width: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25px;
+    z-index: 100;
+}
+
+.obs_link:hover {
+    background-color: rgba(67, 39, 2, .5);
+}
+
+.book,
+.sp_book {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    top: 160px;
+}
+
+.book {
+    background-image: url(../image/telescope.png);
+    left: 56px;
+}
+
+.sp_book {
+    background-image: url(../image/shootingstar.png);
+    right: 56px;
+}
+
+.b-link,
+.sb-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 1.6em;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid white;
+    font-size: 1.6rem;
+    color: white;
+    padding-top: 28px;
+    font-weight: 400;
+}
+
+.b-link:hover {
+    background-color: rgba(2, 22, 62, 0.5);
+}
+
+.sb-link:hover {
+    background-color: rgba(54, 3, 40, 0.5);
+}
+
+
+.weather img {
+    width: 90%;
+}
+
+.weather div {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.w_today,
+.w_tmr {
+    position: absolute;
+    bottom: 60px;
+}
+
+.w_today {
+    left: 24px;
+}
+
+.w_tmr {
+    right: 94px
+}
+
+.weather figcaption {
+    position: absolute;
+    width: 100px;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    top: -20px;
+    left: 20px;
+    text-align: right;
+    line-height: 2em;
+}
+
+.weather h2 {
+    font-size: 1.6rem;
+    color: #FFC600;
+    font-weight: 400;
+}
+
+.w_today>div {
+    background-color: #47A0DE;
+}
+
+.w_tmr>div {
+    background-color: #919191;
+}
+
+/* 공지사항 */
+.sec-4 {
+    width: 100%;
+    padding: 40px 16px 58px 16px;
+    border-bottom: 1px solid #999;
+}
+
+.sec-4>* {
+    flex: 1;
+    font-size: 1.4rem;
+}
+
+.sec-4 h1 {
+    padding-bottom: 14px;
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.sec-4 h1 i {
+    color: #DE3939;
+    padding-right: 8px;
+}
+
+.notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-bottom: 1px dotted #999;
+}
+
+.notice ul li:hover a {
+    font-weight: 400;
+}
+
+.notice .no_title {
+    width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.i_no,
+.i_end,
+.i_de {
+    font-size: 1rem;
+    display: inline-block;
+    width: 36px;
+    height: 15px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 17px;
+    margin-right: 3px;
+    color: white;
+}
+
+.i_no {
+    background-color: #FFC600;
+}
+
+.i_end {
+    background-color: #444;
+}
+
+.i_de {
+    background-color: #777;
+}
+
+
+.notice ul li:hover .i_no,
+.notice ul li:hover .i_end,
+.notice ul li:hover .i_de {
+    background-color: #DE3939;
+}
+
+.no_date {
+    font-size: 1.2rem;
+}
+
+.notice>ul>a {
+    float: right;
+    margin-top: 15px;
+}
+
+
+
+.notice>ul>a>span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #eaeaea;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 17px;
+}
+
+.notice>ul>a:hover {
+    font-weight: 400;
+}
+
+.notice>ul>a:hover span {
+    background-color: #ccc;
+}
+
+/* 지도영역 */
+
+.sec-5 {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.sec-5 h1 {
+    padding-bottom: 26px;
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.sec-5 h1 i {
+    color: #6FC021;
+    padding-right: 8px;
+}
+
+.sec-5 iframe {
+    width: 100%;
+    height: 300px;
+}

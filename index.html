@@ -1,13 +1,164 @@
-<html>
-  <head>
-    <title>marigold-aimyon</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <img src="headphone.jpg" width="520px">
-    <h1><a href="index.html"><호수가 좋아하는 노래 모음></a></h1>
-    <ol>
-      <li><a href="1.html">マリーゴールド</a></li>
-      <li><a href="2.html">僕が死のうと思ったのは</a></li>
-      <li><a href="3.html">トリセツ</a></li>
-  </body>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대전시민천문대_모바일</title>
+    <link rel="stylesheet" href="./common/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer">
+    </script>
+    <script src="./common/main.js"></script>
+    <script>
+        $(() => {
+            $('#headers').load('header.html');
+            $('#footers').load('footer.html');
+        });
+    </script>
+
+</head>
+
+<body>
+    <header id="headers"></header>
+    <section class="sec-1">
+        <h1 hidden>슬라이드영역</h1>
+        <div class="dot">
+            <span class="big"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="slide_con">
+
+            <ul class="slide">
+                <li class="slide1">
+                    <button class="prev">이전</button>
+                    <button class="next">다음</button>
+                    <img src="./image/main-1_img.png" alt="거리두기">
+                    <p>개인관람<br><span>예약제</span> 운영<br><span>회당 20명</span></p>
+                </li>
+                <li class="slide2">
+                    <button class="prev">이전</button>
+                    <button class="next">다음</button>
+                    <img src="./image/yellow_star.svg" alt="별">
+                    <p><span>온라인</span>토요<span> 별 </span>음악회</p>
+                    <p>Youtube / facebook LIVE 중계</p>=
+                    <a class="go" href="./sub_2-1.html">바로가기</a>
+                </li>
+                <li class="slide3">
+                    <button class="prev">이전</button>
+                    <button class="next">다음</button>
+                    <img src="./image/main-3_img.png" alt="주니어닥터">
+                    <a class="go" href="./sub_2-2.html">바로가기</a>
+                </li>
+                <li class="slide4">
+                    <button class="prev">이전</button>
+                    <button class="next">다음</button>
+                    <img src="./image/main-4_text.png" alt="황금특강">
+                    <a class="go" href="./sub_2-3.html">바로가기</a>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+    <section class="sec-2">
+        <h1 hidden>이용안내</h1>
+        <p><span> <i class="far fa-clock"></i> 운영시간 </span> | 14:00 ~ 22:00 (입장마감 21시 50분)</p>
+        <p><span><i class="fas fa-clock"></i> 휴 관 일 </span> | 매주 월요일, 공휴일 다음날, 명절 및 신정 연휴</p>
+        <p><span><i class="fas fa-won-sign"></i> 이용요금 </span> | 무료</p>
+        <p><span><i class="fas fa-phone-alt"></i> 전화문의 </span> | 042-863-8762, 8763 (13:00 ~ 22:00)</p>
+    </section>
+    <section class="sec-3">
+        <h1 hidden>예약영역</h1>
+        <img src="./image/middle.png" alt="대전시민천문대">
+
+        <div class="obs">
+            <a class="obs_link" href="#">
+                <p>이번 주 관측대상 보러가기</p>
+                <img src="./image/화살표.png" alt="화살표">
+            </a>
+        </div>
+        <div class="book">
+            <a class="b-link" href="./sub_1-1.html">관측프로그램<br>예약</a>
+        </div>
+        <div class="sp_book">
+            <a class="sb-link" href="#">특별프로그램<br>예약</a>
+        </div>
+        <div class="weather">
+            <figure class="w_today">
+                <div><img src="./image/mostlysunny.svg" alt="구름조금"></div>
+                <figcaption>
+                    <h2>오늘의 날씨</h2>
+                    <p>구름 조금<br>
+                        강수량 30%</p>
+                </figcaption>
+            </figure>
+            <figure class="w_tmr">
+                <div><img src="./image/chancerain.svg" alt="비"></div>
+                <figcaption>
+                    <h2>내일의 날씨</h2>
+                    <p>비<br>
+                        강수량 90%</p>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+    <section class="sec-4">
+        <h1><i class="fas fa-volume-up"></i>공지사항</h1>
+        <div class="notice">
+            <ul>
+                <li>
+                    <a href="./sub_2-4.html">
+                        <span class="no_title">
+                            <span class="i_no">공 지</span>
+                            2021 대전시민천문대 어린이합창단 신입단원 모집안내</span>
+                        <span class="no_date">21-06-16</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./sub_2-5.html">
+                        <span class="no_title">
+                            <span class="i_end">종 료</span>
+                            6월 첫째 주, 이야기와 음악이 있는 특별한 토요 별음악회(6월 공지)</span>
+                        <span class="no_date">21-05-30</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./sub_2-6.html">
+                        <span class="no_title">
+                            <span class="i_de">마 감</span>
+                            어린이천문교실 신청자모집(유료)</span>
+                        <span class="no_date">21-05-23</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./sub_2-7.html">
+                        <span class="no_title">
+                            <span class="i_no">공 지</span>
+                            5월 20일 천문대 휴관 안내</span>
+                        <span class="no_date">21-05-19</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./sub_2-8.html">
+                        <span class="no_title">
+                            <span class="i_end">종 료</span>
+                            5월 26일 개기월식 관측안내</span>
+                        <span class="no_date">21-05-18</span>
+                    </a>
+                </li>
+                <a href="./sub_2-0.html"> <span>+</span> 더보기</a>
+            </ul>
+        </div>
+    </section>
+    <section class="sec-5">
+        <h1><i class="fas fa-map-marked-alt"></i>찾아오시는길</h1>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3212.141667508793!2d127.35170631527822!3d36.38156438003693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654a4cf4368357%3A0x9d3cc093647260cd!2z64yA7KCE7Iuc66-87LKc66y464yA!5e0!3m2!1sko!2skr!4v1624582619875!5m2!1sko!2skr"
+            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    <footer id="footers"></footer>
+</body>
+
+</html>

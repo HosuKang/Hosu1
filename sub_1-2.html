@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대전시민천문대_모바일</title>
+    <link rel="stylesheet" href="./common/sub_1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer">
+    </script>
+    <script src="./common/sub_1.js"></script>
+    <script>
+        $(() => {
+            $('#headers').load('header.html');
+            $('#footers').load('footer.html');
+        });
+    </script>
+
+</head>
+
+<body>
+    <header id="headers"></header>
+    <section class="sec-1">
+        <h1>관측프로그램예약</h1>
+        <p class="process"><span>2</span> 관람시간 선택</p>
+        <p class="chosen">관람일: 2021-06-24</p>
+        <div class="choice">
+            <p>선택</p>
+            <p>구분</p>
+            <p>시간</p>
+            <p>예약상태</p>
+        </div>
+        <article class="book_list">
+            <label for="check1">
+                <div>
+                    <input type="radio" id="check1" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>1회차 14:10-14:30</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+
+            <label for="check2">
+                <div>
+                    <input type="radio" id="check2" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>2회차 14:40-15:00</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+            <label for="check3">
+                <div>
+                    <input type="radio" id="check3" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>3회차 15:10-15:30</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+            <label for="check4">
+                <div>
+                    <input type="radio" id="check4" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>4회차 15:40-16:00</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+            <label for="check5">
+                <div>
+                    <input type="radio" id="check5" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>5회차 16:10-16:30</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+            <label for="check6">
+                <div>
+                    <input type="radio" id="check6" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>6회차 16:40-17:00</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+            <label for="check7">
+                <div>
+                    <input type="radio" id="check7" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>7회차 17:10-17:30</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+            <label for="check8">
+                <div>
+                    <input type="radio" id="check8" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>8회차 17:40-18:00</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+            <label for="check9">
+                <div>
+                    <input class="close" type="radio" id="check9" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>9회차 19:00-19:20</span>
+                    <span class="close_booking">예약마감</span>
+                </div>
+            </label>
+            <label for="check10">
+                <div>
+                    <input class="close" type="radio" id="check10" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>10회차 19:30-19:50</span>
+                    <span class="close_booking">예약마감</span>
+                </div>
+            </label>
+            <label for="check11">
+                <div>
+                    <input class="close" type="radio" id="check11" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>11회차 20:00-20:20</span>
+                    <span class="close_booking">예약마감</span>
+                </div>
+            </label>
+            <label for="check12">
+                <div>
+                    <input class="close" type="radio" id="check12" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>12회차 20:30-20:50</span>
+                    <span class="close_booking">예약마감</span>
+                </div>
+            </label>
+            <label for="check13">
+                <div>
+                    <input class="close" type="radio" id="check13" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>13회차 21:00-21:20</span>
+                    <span class="close_booking">예약마감</span>
+                </div>
+            </label>
+            <label for="check14">
+                <div>
+                    <input type="radio" id="check14" name="관람시간 선택">
+                    <span>주관측실</span>
+                    <span>14회차 21:30-21:50</span>
+                    <span class="open_booking">예약가능</span>
+                </div>
+            </label>
+
+        </article>
+
+        <div class="btn">
+            <a class="prev" href="./sub_1-1.html">이전</a>
+            <a class="next next2" href="#">다음</a>
+        </div>
+        <div class="dot">
+            <span></span>
+            <span class="big"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="pop">
+            <div class="pop_box">
+                <p class="pop_text">관람시간을 선택해주세요.</p>
+                <p class="pop_ok">확인</p>
+            </div>
+        </div>
+    </section>
+    <footer id="footers"></footer>
+</body>
+
+</html>
